@@ -419,15 +419,16 @@ schtasks /Change /TN "Microsoft\Windows\DiskFootprint\Diagnostics" /Disable
 schtasks /Change /TN "Microsoft\Windows\CloudExperienceHost\CreateObjectTask" /Disable
 schtasks /Change /TN "Microsoft\Windows\Windows Error Reporting\QueueReporting" /Disable
 goto bcdedit
+
 :bcdedit 
-/set disabledynamictick yes
+bcdedit /set disabledynamictick yes
 taskkill /f /im explorer.exe
 start explorer.exe
-exitgoto end
+exit
+goto end
 
 :discord
-start  https://discord.com/invite/JVEWR9CGk5
-
+start https://discord.com/invite/JVEWR9CGk5
 
 :end
 pause
